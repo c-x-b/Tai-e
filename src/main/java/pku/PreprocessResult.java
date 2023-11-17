@@ -100,7 +100,8 @@ public class PreprocessResult {
             else if(stmt instanceof New)
             {
                 if(id!=0) // ignore unlabeled `new` stmts
-                    this.alloc((New)stmt, id);
+                    this.alloc((New) stmt, id);
+                id = 0;
             }
         }
     }

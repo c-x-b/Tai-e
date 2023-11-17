@@ -37,7 +37,8 @@ public class PointerAnalysisTrivial extends ProgramAnalysis<PointerAnalysisResul
 
         World.get().getClassHierarchy().applicationClasses().forEach(jclass->{
             logger.info("Analyzing class {}", jclass.getName());
-            jclass.getDeclaredMethods().forEach(method->{
+            jclass.getDeclaredMethods().forEach(method -> {
+                logger.info("Analyzing method {}", method.getName());
                 if(!method.isAbstract())
                     preprocess.analysis(method.getIR());
             });
